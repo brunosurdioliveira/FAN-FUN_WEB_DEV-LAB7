@@ -1,0 +1,89 @@
+<!--
+Name:			Bruno Surdi Oliveira
+Date:			April, 2020
+Purpose:		Lab 7 - Postal Service
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Postal Service</title>
+</head>
+
+<body onload="displayParcels();">
+	<image
+		src="https://www.fanshaweonline.ca/content/19F/995710-INFO-1232-01-20W/iwd_ps_logo.png?d2lSessionVal=QndCtdjWf18wCc8R7vQH0NVw0&ou=995710"
+		width="50%" height="50%" />
+
+	<!-- Create Parcel -->
+	<fieldset>
+		<legend>Create a Parcel</legend>
+		<div>
+			<strong>Destination: </strong>
+			<select id="createParcel_Destination" style="padding-right: 5px;">
+				<option>Alberta</option>
+				<option>British Columbia</option>
+				<option>Manitoba</option>
+				<option>New Brunswick</option>
+				<option>Newfoundland</option>
+				<option>Northwest Territories</option>
+				<option>Nova Scotia</option>
+				<option>Nunavut</option>
+				<option>Ontario</option>
+				<option>P.E.I</option>
+				<option>Quebec</option>
+				<option>Saskatchewan</option>
+				<option>Yukon</option>
+			</select>
+			<strong>Weight (g): </strong>
+			<input type="number" id="createParcel_Weight" value=0 style="padding-right: 5px;" />
+			<strong>Express Shipping: </strong>
+			<input type="checkbox" id="createParcel_expressShipping" style="transform: scale(1.5);" />
+			<br>
+			<input type="button" value="Create Parcel" onclick="createParcel();" style="margin-top: 10px;" />
+		</div>
+	</fieldset>
+	<br>
+
+	<!-- Process Parcel -->
+	<fieldset>
+		<legend>Process a Parcel</legend>
+		<div>
+			<strong>Tracking Number: </strong>
+			<input type="text" id="tbTrackingNumber" maxlength=13 style="padding-right: 5px;" />
+			<strong>Set Status: </strong>
+			<select id="processParcel_Status">
+				<option>Shipped</option>
+				<option>In Transit</option>
+				<option>Delivered</option>
+			</select>
+			<br>
+			<input type="button" value="Process Parcel" onclick="processParcel();" style="margin-top: 10px;" />
+		</div>
+	</fieldset>
+	<br>
+
+	<!-- Display Parcel -->
+	<fieldset>
+		<legend>Display Parcels</legend>
+		<div style="padding-bottom: 5px;">
+			<strong>Status: </strong>
+			<select id="displayParcelsFilter" onchange="displayParcels();">
+				<option selected>All</option>
+				<option>Processing</option>
+				<option>Shipped</option>
+				<option>In Transit</option>
+				<option>Delivered</option>
+			</select>
+		</div>
+		<div style="padding-bottom: 5px;"><strong>Tracking Number | Status | Destination | Weight | Express
+				Shipping</strong></div>
+		<div id="displayParcelOutput">[Ouput the list of parcels here]</div>
+	</fieldset>
+
+	<!-- Javascript -->
+	<script src="Bruno_Lab7.js">
+	</script>
+</body>
+
+</html>
